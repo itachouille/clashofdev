@@ -37,7 +37,6 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  outline: 1px solid rgb(71, 105, 255);
 }
 
 .badge {
@@ -89,7 +88,7 @@ body {
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 50%;
-  background-image: url("/toggle.svg");
+  background-image: url("/assets/toggle.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -103,9 +102,8 @@ input:checked + .slider:before {
 .hero {
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
+  margin-top: 7rem;
   padding: 0 1rem;
-  outline: 1px solid tomato;
 }
 
 h1 {
@@ -116,17 +114,15 @@ h1 {
   line-height: 82px;
 }
 
-h1 span {
-  display: flex;
-}
-
-h1:last-child {
+.italic {
   font-style: italic;
 }
 
 .title-badge {
-  width: 103px;
-  height: 80px;
+  position: absolute;
+  top: 180px;
+  left: 279px;
+  width: 110px;
 }
 
 .card-container {
@@ -134,7 +130,7 @@ h1:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 2rem;
+  margin-top: 5rem;
   width: 100%;
   height: 280px;
   background-color: rgb(206, 11, 11);
@@ -143,14 +139,20 @@ h1:last-child {
 .card {
   position: absolute;
   display: flex;
-  width: 200px;
-  height: 250px;
+  width: 240px;
+  height: 300px;
   border-radius: 15px;
   background-color: #fefefe;
   transform: rotate(13.19deg);
 }
 
 .crown {
-  width: 188.28px;
-  height: 188.28px;
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  top: 2rem;
+  left: 0.3rem;
+  transform: rotate(-10deg);
 }
+
+/* outline: 1px solid tomato; */
