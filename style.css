@@ -1,0 +1,156 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f3f3f1;
+  font-family: "Inter", sans-serif;
+}
+
+.progressbar-wrapper {
+  position: fixed;
+  top: 0;
+  background-color: #f3f3f1;
+  color: white;
+  width: 100%;
+}
+
+.progressbar {
+  background-color: black;
+  padding: 2px;
+  width: 15%;
+}
+
+.header {
+  display: flex;
+  margin-top: 2rem;
+  height: 40px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  outline: 1px solid rgb(71, 105, 255);
+}
+
+.badge {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12px;
+  color: #ebedff;
+  background-color: #262625;
+  padding: 6px 12px;
+  border-radius: 1rem;
+  transform: rotate(8deg);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 27px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #262625;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 63.07px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 23px;
+  width: 23px;
+  left: 3px;
+  bottom: 2.5px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+  background-image: url("/toggle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  padding: 0 1rem;
+  outline: 1px solid tomato;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #262625;
+  font-weight: 600;
+  font-size: 74px;
+  line-height: 82px;
+}
+
+h1 span {
+  display: flex;
+}
+
+h1:last-child {
+  font-style: italic;
+}
+
+.title-badge {
+  width: 103px;
+  height: 80px;
+}
+
+.card-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  width: 100%;
+  height: 280px;
+  background-color: rgb(206, 11, 11);
+}
+
+.card {
+  position: absolute;
+  display: flex;
+  width: 200px;
+  height: 250px;
+  border-radius: 15px;
+  background-color: #fefefe;
+  transform: rotate(13.19deg);
+}
+
+.crown {
+  width: 188.28px;
+  height: 188.28px;
+}
