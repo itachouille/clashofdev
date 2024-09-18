@@ -196,18 +196,18 @@ h1 {
 .some {
   bottom: -1rem;
   left: -3rem;
-  transform: rotate(-11deg);
+  transform: rotate(-13deg);
 }
 
 .chris {
   bottom: 0.7rem;
   right: -4.5rem;
-  transform: rotate(-11deg);
+  transform: rotate(-13deg);
 }
 
 .lina {
   right: -3rem;
-  transform: rotate(-11deg);
+  transform: rotate(-13deg);
 }
 
 .vector {
@@ -215,13 +215,29 @@ h1 {
   z-index: 10;
   top: -2rem;
   right: 0;
-  transform: rotate(-11deg);
+  transform: rotate(-13deg);
 }
 
-.horizontal-text-container {
-  width: 100vw;
-  overflow: hidden;
-  padding-top: 2rem;
+.scroll-container {
+  width: 100%;
+}
+
+.scroll-paragraph {
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 10rem;
+  font-weight: 600;
+  animation: scroll-horizontal 20s linear infinite;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
 }
 
 .skill-section {
@@ -254,4 +270,4 @@ h1 {
   width: 100%;
 }
 
-/*  outline: 1px solid tomato; */
+/*  outline: 3px solid lime; */
