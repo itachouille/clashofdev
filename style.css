@@ -22,6 +22,7 @@ body {
   background-color: #f3f3f1;
   color: white;
   width: 100%;
+  z-index: 100;
 }
 
 .progressbar {
@@ -264,47 +265,57 @@ h1 {
   }
 }
 
-.skill-card-container {
+.card-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: auto;
+  height: 650px;
+}
+
+.card-container {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
 
-.skill-card {
-  position: relative;
+.card {
   width: 366px;
-  height: 600px;
+  height: 650px;
   border-radius: 60px;
-  overflow: hidden;
 }
 
-.skill-card-header {
+.card-header {
   display: flex;
   padding: 2.5rem;
   text-transform: uppercase;
   color: #262625;
 }
 
-.skill-card-header h5 {
+.card-header h5 {
   padding-left: 1.5rem;
   font-weight: 700;
   font-size: 12px;
   line-height: 20px;
 }
 
-.skill-card-header p {
+.card-header p {
   font-weight: 500;
   font-size: 12px;
   line-height: 20px;
   opacity: 0.8;
 }
 
-.skill-card-body {
+.card-body {
   display: flex;
   flex-direction: column;
   padding: 0 2.5rem;
 }
 
-.skill-card-body p {
+.card-body p {
   font-weight: 500;
   font-size: 12px;
   line-height: 20px;
@@ -312,15 +323,15 @@ h1 {
   padding-top: 1rem;
 }
 
-.skill-card-body span {
+.card-body span {
   font-weight: 700;
 }
 
-.skill-card-footer {
+.card-footer {
   width: 100%;
 }
 
-.skill-card-footer img {
+.card-footer img {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -356,4 +367,27 @@ h1 {
   background-color: #fffac2;
 }
 
-/*  outline: 3px solid lime; */
+.skill-6 {
+  background-color: #ffbcab;
+}
+
+.skill-7 {
+  background-color: #262625;
+}
+
+.footer {
+  display: flex;
+  margin-top: 2rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.date {
+  color: #262625;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+}
