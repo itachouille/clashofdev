@@ -236,6 +236,7 @@ h1 {
 
 .scroll-container {
   position: relative;
+  margin-bottom: 6rem;
   width: 100%;
   overflow: hidden;
   mask: linear-gradient(
@@ -253,7 +254,6 @@ h1 {
   font-size: 11rem;
   font-weight: 600;
   animation: scroll-horizontal 30s linear infinite;
-  /*  animation-delay: 5s; */
 }
 
 @keyframes scroll-horizontal {
@@ -271,27 +271,25 @@ h1 {
   flex-direction: column;
   width: 100%;
   overflow-y: auto;
-  height: 650px;
+  height: 600px;
+  scrollbar-width: none;
 }
 
 .card-container {
   position: sticky;
   top: 0;
-  display: flex;
-  justify-content: center;
   margin: 0 auto;
 }
 
 .card {
   width: 366px;
-  height: 650px;
+  height: 600px;
   border-radius: 60px;
 }
 
 .card-header {
   display: flex;
   padding: 2.5rem;
-  text-transform: uppercase;
   color: #262625;
 }
 
@@ -329,12 +327,14 @@ h1 {
 
 .card-footer {
   width: 100%;
+  overflow: hidden;
 }
 
 .card-footer img {
   position: absolute;
   bottom: 0;
   right: 0;
+  border-radius: 0 0 60px 0;
 }
 
 .cursor-1 {
@@ -373,6 +373,87 @@ h1 {
 
 .skill-7 {
   background-color: #262625;
+  color: #f3f3f1;
+}
+
+#card-7 .card-header {
+  position: relative;
+  height: 33%;
+}
+
+#card-7 .card-header img {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+}
+
+#card-7 .card-header {
+  color: #f3f3f1;
+  font-weight: 500;
+}
+
+#card-7 .card-body {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  display: flex;
+  flex-direction: column;
+  height: 33%;
+}
+
+#card-7 .card-body span {
+  font-weight: 600;
+}
+
+.a {
+  display: flex;
+  justify-content: space-between;
+}
+
+#card-7 .card-footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 33%;
+}
+
+#card-7 .card-footer img {
+  border-radius: 0;
+}
+
+.button {
+  background-color: #f3f3f1;
+  color: #262625;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 13.67px;
+  line-height: 14px;
+  border: none;
+  width: 178px;
+  height: 58px;
+  z-index: 1;
+}
+
+.v1 {
+  position: absolute;
+  top: 3.9rem;
+  left: 86px;
+  z-index: 2;
+}
+
+.v2 {
+  position: absolute;
+  top: 2.2rem;
+  left: 230px;
+  z-index: 0;
+}
+
+.v3 {
+  position: absolute;
+  top: 7rem;
+  left: 225px;
+  z-index: 2;
 }
 
 .footer {
