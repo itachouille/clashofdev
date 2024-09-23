@@ -9,8 +9,6 @@
   --color-skill-4: #badaff;
   --color-skill-5: #fffac2;
   --color-skill-6: #ffbcab;
-  --color-skill-7-bg: #262625;
-  --color-skill-7-text: #f3f3f1;
 
   /* Polices */
   --font-family-base: "Inter", Arial, sans-serif;
@@ -36,7 +34,6 @@
   /* Autres */
   --border-radius-small: 10px;
   --border-radius-medium: 60px;
-  --border-radius-pill: 63.07px;
   --transition-fast: 0.4s;
   --transition-slow: 0.6s;
   --z-index-header: 100;
@@ -61,6 +58,11 @@ body {
 body {
   background-color: var(--color-background);
   font-family: var(--font-family-base);
+}
+
+.dark-theme {
+  background-color: #555555;
+  color: #f3f3f1;
 }
 
 .container-header {
@@ -131,7 +133,7 @@ body {
   bottom: 0;
   background-color: var(--color-primary);
   transition: var(--transition-slow) ease;
-  border-radius: var(--border-radius-pill);
+  border-radius: var(--border-radius-medium);
 }
 
 .switch-slider:before {
@@ -139,7 +141,7 @@ body {
   content: "";
   height: 23px;
   width: 23px;
-  left: 3px;
+  left: 28px;
   bottom: 2.5px;
   background-color: var(--color-secondary);
   transition: var(--transition-slow) ease;
@@ -150,7 +152,12 @@ body {
 }
 
 input:checked + .switch-slider:before {
-  transform: translateX(26px);
+  transform: translateX(-26px);
+  border: var(--color-primary) solid 1px;
+}
+
+input:checked + .switch-slider {
+  background-color: var(--color-secondary);
 }
 
 .hero-section {
@@ -172,7 +179,6 @@ input:checked + .switch-slider:before {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 1fr);
-  color: var(--color-primary);
   font-weight: 600;
   font-size: var(--font-size-xl);
 }
@@ -278,6 +284,46 @@ input:checked + .switch-slider:before {
   top: -2rem;
   right: 0;
   transform: rotate(-13deg);
+}
+
+.playing-card.night-mode {
+  background-color: #000428;
+  background-image: radial-gradient(circle, #2c3e50, #000428);
+  box-shadow: 0 0 20px #ffe380;
+  transition: background-color 1s ease, box-shadow 1s ease;
+}
+
+.crown.night-mode {
+  filter: drop-shadow(0 0 15px yellow);
+  transition: filter 1s ease;
+}
+
+.crown-small.night-mode {
+  filter: drop-shadow(0 0 10px yellow);
+  transition: filter 1s ease;
+}
+
+@keyframes twinkle-stars {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.playing-card.night-mode::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  animation: twinkle-stars 2s infinite ease-in-out;
+  pointer-events: none;
+  z-index: var(--z-index-comment);
 }
 
 .scroll-container {
@@ -446,12 +492,12 @@ input:checked + .switch-slider:before {
 }
 
 .skill-7 {
-  background-color: var(--color-skill-7-bg);
-  color: var(--color-skill-7-text);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .skill-7 .card-notation {
-  color: var(--color-skill-7-text);
+  color: var(--color-secondary);
 }
 
 .skill-7 .card-description {
@@ -536,7 +582,6 @@ input:checked + .switch-slider:before {
 }
 
 .date {
-  color: var(--color-primary);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-base);
@@ -550,12 +595,26 @@ input:checked + .switch-slider:before {
     justify-content: space-around;
   }
 
+  .hero-section {
+    margin: 10rem var(--padding-small);
+    padding-top: 4rem;
+  }
+
   .text-wrapper {
     margin: 0;
   }
 
   .playing-card-container {
     margin-top: 0;
+  }
+
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(25%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
 
   .skill-7 .card-description {
@@ -635,6 +694,7 @@ input:checked + .switch-slider:before {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, 1fr);
     justify-content: flex-start;
+    font-size: var(--font-size-xxl);
   }
 
   .block-1 {
@@ -666,6 +726,15 @@ input:checked + .switch-slider:before {
   .title-badge {
     transform: rotate(-20deg);
   }
+
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(35%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -675,5 +744,14 @@ input:checked + .switch-slider:before {
 
   .block-4 span {
     transform: translateX(-35%);
+  }
+
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
 }

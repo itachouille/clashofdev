@@ -11,25 +11,27 @@ function updateProgressBar() {
     .style.setProperty("--progress", scrollPercent);
 }
 
-// Theme
-const themeSwitch = document.querySelector(".switch input");
-const body = document.body;
+// toggle theme
 
-/* if (localStorage.getItem("theme") === "dark") {
-  body.classList.add("dark-theme");
-  themeSwitch.checked = true;
-} else {
-  themeSwitch.checked = false;
-}
- */
-themeSwitch.addEventListener("change", () => {
-  if (themeSwitch.checked) {
-    body.classList.add("dark-theme");
-    localStorage.setItem("theme", "dark");
+const userPrefersDark = localStorage.getItem("theme") === "light";
+
+function setThemePreference(prefersDark) {
+  if (prefersDark) {
+    document.body.classList.add("dark-theme");
   } else {
-    body.classList.remove("dark-theme");
-    localStorage.setItem("theme", "light");
+    document.body.classList.remove("dark-theme");
   }
+}
+
+setThemePreference(userPrefersDark);
+
+const checkbox = document.getElementById("checkbox");
+checkbox.checked = userPrefersDark;
+
+checkbox.addEventListener("change", (event) => {
+  const isDarkMode = event.target.checked;
+  setThemePreference(isDarkMode);
+  localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 });
 
 // Button
@@ -57,4 +59,23 @@ document.getElementsByClassName("button")[0].addEventListener("click", () => {
       requestAnimationFrame(frame);
     }
   })();
+});
+
+// Card Easter Egg
+let clickCount = 0;
+const card = document.getElementById("playingCard");
+const crowns = document.querySelectorAll(".crown, .crown-small");
+
+card.addEventListener("click", () => {
+  clickCount++;
+
+  if (clickCount === 5) {
+    card.classList.add("night-mode");
+    crowns.forEach((crown) => crown.classList.add("night-mode"));
+    clickCount = 0;
+    setTimeout(() => {
+      card.classList.remove("night-mode");
+      crowns.forEach((crown) => crown.classList.remove("night-mode"));
+    }, 5000);
+  }
 });
