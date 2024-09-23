@@ -418,27 +418,53 @@ input:checked + .slider:before {
   margin-top: 5rem;
 }
 
+.skill-7 .card-content {
+  padding-top: 2rem;
+}
+
 .span {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.pappate {
+.papate {
   position: absolute;
-  top: 0;
-  left: 2rem;
+  top: 4rem;
+  right: 4rem;
 }
 
 .card-button {
-  display: flex;
-  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+}
+
+.sticker-button {
+  position: absolute;
+}
+
+.sticker-button:nth-child(1) {
+  top: -0.5rem;
+  left: -0.5rem;
+}
+
+.sticker-button:nth-child(2) {
+  z-index: -1;
+  top: -2.4rem;
+  right: -1.3rem;
+}
+
+.sticker-button:nth-child(3) {
+  bottom: -1.5rem;
+  right: 0.5rem;
 }
 
 .button {
-  padding: 1.5rem 2rem;
+  cursor: pointer;
+  padding: 1.2rem 2.2rem;
   border-radius: 60px;
   font-weight: 500;
+  border: none;
 }
 
 .cursor-1 {
@@ -458,6 +484,23 @@ input:checked + .slider:before {
 }
 
 @media (min-width: 768px) {
+  .papate {
+    top: 8rem;
+    right: 8rem;
+  }
+
+  .skill-7 .card-description {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 90px;
+  }
+
+  .span {
+    display: inline-block;
+  }
+
   .cards-container {
     height: 600px;
   }
