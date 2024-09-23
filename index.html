@@ -13,25 +13,34 @@
   <body>
     <div class="container-header">
       <div class="header-top">
-        <div id="progress-bar"></div>
+        <div id="progress-bar" aria-label="progress bar"></div>
       </div>
       <div class="header-bottom">
         <span class="badge">LA PISCINE</span>
         <span class="percentage">0%</span>
-        <label class="switch" aria-label="Toggle theme">
-          <input type="checkbox" checked />
-          <span class="slider"></span>
+        <label class="theme-switch" aria-label="Toggle theme">
+          <input
+            type="checkbox"
+            id="theme-toggle"
+            aria-pressed="false"
+            checked
+          />
+          <span class="switch-slider"></span>
         </label>
       </div>
     </div>
     <section class="hero-section">
       <div class="hero-container">
-        <div class="wrapper">
+        <div class="text-wrapper">
           <div class="hero-text">
             <div class="block-1">
               <span>Que le</span>
               <div class="block-2">
-                <img class="title-badge" src="./assets/1.svg" alt="badge" />
+                <img
+                  class="title-badge"
+                  src="./assets/stickers/badge.svg"
+                  alt="badge"
+                />
               </div>
             </div>
             <div class="block-3"><span>plus fort,</span></div>
@@ -40,38 +49,38 @@
         </div>
         <div class="playing-card-container">
           <div class="playing-card">
-            <img src="./assets/Vector.svg" class="vector" />
-            <img class="crown" src="./assets/crown.svg" alt="crown" />
+            <img src="./assets/stickers/logo.svg" class="logo" />
+            <img class="crown" src="./assets/stickers/crown.svg" alt="crown" />
             <img
               class="crown-small top-left"
-              src="./assets/crown-small.svg"
+              src="./assets/stickers/crown.svg"
               alt="crown"
             />
             <img
               class="crown-small top-right"
-              src="./assets/crown-small.svg"
+              src="./assets/stickers/crown.svg"
               alt="crown"
             />
             <img
               class="crown-small bottom-left"
-              src="./assets/crown-small.svg"
+              src="./assets/stickers/crown.svg"
               alt="crown"
             />
             <img
               class="crown-small bottom-right"
-              src="./assets/crown-small.svg"
+              src="./assets/stickers/crown.svg"
               alt="crown"
             />
             <img
-              src="./assets/comment-cursors/Comment cursor Some.svg"
+              src="./assets/comment-cursors/Sometime.svg"
               class="comment-cursor some"
             />
             <img
-              src="./assets/comment-cursors/Comment cursor Lina.svg"
+              src="./assets/comment-cursors/Lina.svg"
               class="comment-cursor lina"
             />
             <img
-              src="./assets/comment-cursors/Comment cursor Chris.svg"
+              src="./assets/comment-cursors/Chris.svg"
               class="comment-cursor chris"
             />
           </div>
@@ -83,9 +92,17 @@
         <div class="scroll-paragraph">
           <div class="flex">
             <span>&lt;A&gt;Front les Tous!</span>
-            <img class="balise" src="./assets/balise.svg" alt="Vector" />
+            <img
+              class="balise"
+              src="./assets/stickers/balise.svg"
+              alt="balise"
+            />
             <span>Clash of Dev</span>
-            <img class="smiley" src="./assets/smiley.svg" alt="Smiley" />
+            <img
+              class="smiley"
+              src="./assets/stickers/smiley.svg"
+              alt="smiley"
+            />
           </div>
         </div>
       </div>

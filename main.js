@@ -1,3 +1,4 @@
+// Scroll
 document.addEventListener("scroll", updateProgressBar);
 
 function updateProgressBar() {
@@ -10,6 +11,28 @@ function updateProgressBar() {
     .style.setProperty("--progress", scrollPercent);
 }
 
+// Theme
+const themeSwitch = document.querySelector(".switch input");
+const body = document.body;
+
+/* if (localStorage.getItem("theme") === "dark") {
+  body.classList.add("dark-theme");
+  themeSwitch.checked = true;
+} else {
+  themeSwitch.checked = false;
+}
+ */
+themeSwitch.addEventListener("change", () => {
+  if (themeSwitch.checked) {
+    body.classList.add("dark-theme");
+    localStorage.setItem("theme", "dark");
+  } else {
+    body.classList.remove("dark-theme");
+    localStorage.setItem("theme", "light");
+  }
+});
+
+// Button
 document.getElementsByClassName("button")[0].addEventListener("click", () => {
   let end = Date.now() + 3 * 1000;
   let colors = ["#bb0000", "#bada55"];
